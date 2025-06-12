@@ -1,0 +1,82 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all                      1
+bowtie2_index            1
+download_ncbi_cli        1
+fetch_genome             1
+hisat2_index             1
+unzip_genome             1
+total                    6
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jun 12 17:18:01 2025]
+localrule download_ncbi_cli:
+    output: ../Genome_download/tools/datasets
+    jobid: 4
+    reason: Missing output files: ../Genome_download/tools/datasets
+    resources: tmpdir=/tmp
+
+[Thu Jun 12 17:18:05 2025]
+Finished job 4.
+1 of 6 steps (17%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jun 12 17:18:05 2025]
+localrule fetch_genome:
+    input: ../Genome_download/tools/datasets
+    output: ../../GCF_015220235.1/ncbi_dataset.zip
+    jobid: 3
+    reason: Missing output files: ../../GCF_015220235.1/ncbi_dataset.zip; Input files updated by another job: ../Genome_download/tools/datasets
+    resources: tmpdir=/tmp
+
+[Thu Jun 12 17:20:01 2025]
+Finished job 3.
+2 of 6 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jun 12 17:20:01 2025]
+localrule unzip_genome:
+    input: ../../GCF_015220235.1/ncbi_dataset.zip
+    output: ../../GCF_015220235.1/extracted.txt
+    jobid: 2
+    reason: Missing output files: ../../GCF_015220235.1/extracted.txt; Input files updated by another job: ../../GCF_015220235.1/ncbi_dataset.zip
+    resources: tmpdir=/tmp
+
+Touching output file ../../GCF_015220235.1/extracted.txt.
+[Thu Jun 12 17:20:23 2025]
+Finished job 2.
+3 of 6 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jun 12 17:20:24 2025]
+localrule hisat2_index:
+    input: ../../GCF_015220235.1/extracted.txt
+    output: ../../GCF_015220235.1/hisat2_index_complete.txt
+    jobid: 5
+    reason: Missing output files: ../../GCF_015220235.1/hisat2_index_complete.txt; Input files updated by another job: ../../GCF_015220235.1/extracted.txt
+    resources: tmpdir=/tmp
+
+[Thu Jun 12 17:57:42 2025]
+Finished job 5.
+4 of 6 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jun 12 17:57:42 2025]
+localrule bowtie2_index:
+    input: ../../GCF_015220235.1/extracted.txt
+    output: ../../GCF_015220235.1/bowtie2_index_complete.txt
+    jobid: 1
+    reason: Missing output files: ../../GCF_015220235.1/bowtie2_index_complete.txt; Input files updated by another job: ../../GCF_015220235.1/extracted.txt
+    resources: tmpdir=/tmp
+

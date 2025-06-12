@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule fetch_genome in file /data/scratch/projects/punim0559/Trent/xenarthra/D_novemcinctus/Genome/Snake_download/genome_download.smk, line 15:
+Missing input files for rule fetch_genome:
+    output: ../ncbi_dataset.zip
+    affected files:
+        ../datasets

@@ -1,0 +1,5 @@
+../../GCF_015220235.1/hisat2_index_complete.txt
+../../GCF_015220235.1/extracted.txt
+../../GCF_015220235.1/bowtie2_index_complete.txt
+../Genome_download/tools/datasets
+../../GCF_015220235.1/ncbi_dataset.zip

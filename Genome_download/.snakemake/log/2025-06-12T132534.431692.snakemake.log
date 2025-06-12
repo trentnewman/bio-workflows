@@ -1,0 +1,54 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+all                  1
+bowtie2_index        1
+hisat2_index         1
+total                3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jun 12 13:25:37 2025]
+localrule hisat2_index:
+    input: ../GCF_030445035.2/extracted.txt
+    output: ../GCF_030445035.2/hisat2_index_complete.txt
+    jobid: 5
+    reason: Missing output files: ../GCF_030445035.2/hisat2_index_complete.txt
+    resources: tmpdir=/tmp
+
+[Thu Jun 12 14:00:59 2025]
+Finished job 5.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jun 12 14:00:59 2025]
+localrule bowtie2_index:
+    input: ../GCF_030445035.2/extracted.txt
+    output: ../GCF_030445035.2/bowtie2_index_complete.txt
+    jobid: 1
+    reason: Missing output files: ../GCF_030445035.2/bowtie2_index_complete.txt
+    resources: tmpdir=/tmp
+
+[Thu Jun 12 15:01:01 2025]
+Finished job 1.
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jun 12 15:01:01 2025]
+localrule all:
+    input: ../GCF_030445035.2/bowtie2_index_complete.txt, ../GCF_030445035.2/hisat2_index_complete.txt
+    jobid: 0
+    reason: Input files updated by another job: ../GCF_030445035.2/bowtie2_index_complete.txt, ../GCF_030445035.2/hisat2_index_complete.txt
+    resources: tmpdir=/tmp
+
+[Thu Jun 12 15:01:01 2025]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2025-06-12T132534.431692.snakemake.log
