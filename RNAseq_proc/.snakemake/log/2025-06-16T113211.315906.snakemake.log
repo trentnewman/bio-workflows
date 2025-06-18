@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule map_reads in file /data/scratch/projects/punim0559/Trent/xenarthra/C_didactylus/workflows/RNAseq_proc/rnaseq_proc.smk, line 44:
+Missing input files for rule map_reads:
+    output: ../../SRR10066842/SRR10066842.bam
+    affected files:
+        ../../GCF_015220235.1/GCF_015220235.1_mChoDid1.pri_genomic

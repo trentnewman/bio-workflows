@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /data/scratch/projects/punim0559/Trent/xenarthra/C_didactylus/workflows/RNAseq_proc/rnaseq_proc.smk, line 10:
+Missing input files for rule all:
+    affected files:
+        ../../SRR10066842/SRR10066842.bam../../SRR10066842/SRR10066842.bam.csi

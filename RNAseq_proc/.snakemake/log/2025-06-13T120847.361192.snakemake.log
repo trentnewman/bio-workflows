@@ -1,0 +1,21 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+all                 1
+download_sra        1
+total               2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 13 12:08:47 2025]
+localrule download_sra:
+    output: ../../SRR10066842/SRR10066842
+    jobid: 1
+    reason: Missing output files: ../../SRR10066842/SRR10066842
+    resources: tmpdir=/tmp
+

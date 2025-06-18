@@ -1,0 +1,22 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+all              1
+map_reads        1
+total            2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Jun 16 11:41:21 2025]
+localrule map_reads:
+    input: ../../SRR10066842/SRR10066842_1_val_1.fq, ../../SRR10066842/SRR10066842_2_val_2.fq, ../../GCF_015220235.1/GCF_015220235.1_mChoDid1.pri_genomic.1.ht2
+    output: ../../SRR10066842/SRR10066842.bam
+    jobid: 1
+    reason: Missing output files: ../../SRR10066842/SRR10066842.bam
+    resources: tmpdir=/tmp
+

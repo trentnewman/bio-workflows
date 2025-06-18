@@ -1,0 +1,39 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+all              1
+map_reads        1
+total            2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Jun 17 18:44:16 2025]
+localrule map_reads:
+    input: ../../SRR10066842/SRR10066842_1_val_1.fq, ../../SRR10066842/SRR10066842_2_val_2.fq, ../../GCF_015220235.1/GCF_015220235.1_mChoDid1.pri_genomic.1.ht2
+    output: ../../SRR10066842/SRR10066842.bam, ../../SRR10066842/SRR10066842.bam.csi
+    jobid: 1
+    reason: Missing output files: ../../SRR10066842/SRR10066842.bam.csi, ../../SRR10066842/SRR10066842.bam
+    resources: tmpdir=/tmp
+
+[Tue Jun 17 21:09:37 2025]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Jun 17 21:09:37 2025]
+localrule all:
+    input: ../../SRR10066842/SRR10066842.bam, ../../SRR10066842/SRR10066842.bam.csi
+    jobid: 0
+    reason: Input files updated by another job: ../../SRR10066842/SRR10066842.bam.csi, ../../SRR10066842/SRR10066842.bam
+    resources: tmpdir=/tmp
+
+[Tue Jun 17 21:09:37 2025]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2025-06-17T184409.388682.snakemake.log

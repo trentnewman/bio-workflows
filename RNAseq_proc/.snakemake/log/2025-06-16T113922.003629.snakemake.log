@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+all              1
+map_reads        1
+total            2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Jun 16 11:39:22 2025]
+localrule map_reads:
+    input: ../../SRR10066842/SRR10066842_1_val_1.fq, ../../SRR10066842/SRR10066842_2_val_2.fq, ../../GCF_015220235.1/GCF_015220235.1_mChoDid1.pri_genomic.1.ht2
+    output: ../../SRR10066842/SRR10066842.bam
+    jobid: 1
+    reason: Missing output files: ../../SRR10066842/SRR10066842.bam
+    resources: tmpdir=/tmp
+
+[Mon Jun 16 11:39:25 2025]
+Error in rule map_reads:
+    jobid: 1
+    input: ../../SRR10066842/SRR10066842_1_val_1.fq, ../../SRR10066842/SRR10066842_2_val_2.fq, ../../GCF_015220235.1/GCF_015220235.1_mChoDid1.pri_genomic.1.ht2
+    output: ../../SRR10066842/SRR10066842.bam
+    shell:
+        bash scripts/map.sh ../../SRR10066842/SRR10066842_1_val_1.fq ../../SRR10066842/SRR10066842_2_val_2.fq ../../GCF_015220235.1/GCF_015220235.1_mChoDid1.pri_genomic.1.ht2 ../../SRR10066842/SRR10066842.bam
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-06-16T113922.003629.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

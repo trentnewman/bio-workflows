@@ -1,0 +1,39 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all               1
+trim_reads        1
+total             2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 13 14:37:13 2025]
+localrule trim_reads:
+    input: ../../SRR10066842/SRR10066842_1.fastq, ../../SRR10066842/SRR10066842_2.fastq
+    output: ../../SRR10066842/SRR10066842_1_val_1.fq, ../../SRR10066842/SRR10066842_2_val_2.fq
+    jobid: 1
+    reason: Missing output files: ../../SRR10066842/SRR10066842_1_val_1.fq, ../../SRR10066842/SRR10066842_2_val_2.fq
+    resources: tmpdir=/tmp
+
+[Fri Jun 13 14:53:54 2025]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 13 14:53:54 2025]
+localrule all:
+    input: ../../SRR10066842/SRR10066842_1_val_1.fq, ../../SRR10066842/SRR10066842_2_val_2.fq
+    jobid: 0
+    reason: Input files updated by another job: ../../SRR10066842/SRR10066842_1_val_1.fq, ../../SRR10066842/SRR10066842_2_val_2.fq
+    resources: tmpdir=/tmp
+
+[Fri Jun 13 14:53:54 2025]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2025-06-13T143712.966899.snakemake.log

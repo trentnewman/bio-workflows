@@ -35,6 +35,44 @@ This has been tested on the **Spartan HPC** system and may require modification 
 
 ---
 
+### 🧪 `RNAseq_proc/`
+
+Processes paired-end RNA-seq data to produce aligned, indexed, and coverage-normalised files.  
+The workflow performs the following steps:
+
+- Trims reads with **Trim Galore**
+- Aligns reads to a reference genome using **HISAT2**
+- Sorts and indexes BAM files with **SAMtools**
+- Generates a **BigWig** coverage track using **deepTools**
+
+The workflow is modular and includes a script-based mapping step. Outputs include:
+
+- `*.bam` — coordinate-sorted alignments  
+- `*.bam.csi` — index for BAM  
+- `*.bw` — RPKM-normalised coverage track
+
+#### 🔧 Configuration
+
+Set sample and genome information in `RNAseq_proc/config.yaml`:
+
+```yaml
+accession: SRRXXXXXXX               # RNA-seq sample accession
+genome_accession: GCF_XXXXXXXXX.X   # Genome directory name
+genome_name: GCF_XXXXXXXXX.X_genomic_prefix  # Index prefix basename
+```
+
+All outputs are written outside the repository under a directory named after the sample accession.
+
+#### 🚀 Running the Workflow
+
+From within the `RNAseq_proc/` directory:
+
+```bash
+sbatch submit_snake.slurm
+```
+
+---
+
 ## Notes
 
 - All workflow outputs are written outside the repository (in parallel directories) to keep version control clean.
@@ -45,7 +83,7 @@ This has been tested on the **Spartan HPC** system and may require modification 
 
 ## 🔭 Roadmap
 
-Additional workflows (e.g. RNA-seq processing) will be added over time, each in their own subdirectory under this repository.
+Additional workflows may be added over time, each in their own subdirectory under this repository.
 
 ---
 
